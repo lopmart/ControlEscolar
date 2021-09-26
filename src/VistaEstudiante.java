@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CatalogoEstudiante{
+public class VistaEstudiante{
     private  Scanner lectura;
     
     public Integer Menu(){

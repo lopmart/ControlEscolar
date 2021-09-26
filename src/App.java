@@ -5,7 +5,7 @@ public class App {
     
     public static void main(String[] args) throws Exception {
         
-     CatalogoEstudiante vista = new CatalogoEstudiante();
+        VistaEstudiante vista = new VistaEstudiante();
      ControladorEstudiante Estudiantes = new ControladorEstudiante(vista);
      Estudiantes.MenuEstudiante(); 
   

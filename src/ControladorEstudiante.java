@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class ControladorEstudiante{
     ArrayList <Estudiante> estList;
-    CatalogoEstudiante vista;
+    VistaEstudiante vista;
     Estudiante obj1;
     
-    ControladorEstudiante(CatalogoEstudiante vista){
+    ControladorEstudiante(VistaEstudiante vista){
          estList =  new ArrayList<Estudiante>();
          this.vista=vista;
          
@@ -14,10 +14,6 @@ public class ControladorEstudiante{
     public void addEstudiante(){
         obj1 = new Estudiante(vista.solicitarMatricula(),vista.SolicitarNombreEst(),vista.SolicitarCalificacionEst(), vista.SolicitarEdadEst());
         estList.add(obj1); 
-       
-        // obj1.pedirDatos();  //pregunta de diseño
-      // estList.add(0, new Estudiante());
-      // estList.get(0).pedirDatos();
     }
 
     public ArrayList<Estudiante> obtenerEstudiantes(){
@@ -31,12 +27,6 @@ public class ControladorEstudiante{
            } else {
             return null;
           }
-        //for (int i = 0; i < estList.size(); i++) {
-          // if (matricula == estList.get(i).getMatricula()) {
-           //    return estList.get(i);
-          // }
-      // }
-       //return null; 
     }
 
 
@@ -49,13 +39,6 @@ public class ControladorEstudiante{
         } else {
             return false;
         }
-       /*  for (int i = 0; i < estList.size(); i++) {
-            if (matricula == estList.get(i).getMatricula()) {
-                estList.remove(i);
-                return true;
-            }
-        }
-        return false; */
 }
 
 
@@ -71,7 +54,6 @@ public class ControladorEstudiante{
    public boolean modificarNombreEst(Integer matricula){
         Integer indiceEst=buscarEst(matricula);
         if (indiceEst != -1) {
-          //obj1=estList.get(indiceEst);
           vista.imprimirNombreEst(estList.get(indiceEst).getNombre());
           estList.get(indiceEst).setNombre(vista.SolicitarNombreEst());            
            return true;
@@ -83,7 +65,6 @@ public class ControladorEstudiante{
    public boolean modificarCalEst(Integer matricula){
     Integer indiceEst=buscarEst(matricula);
     if (indiceEst != -1) {
-      //obj1=estList.get(indiceEst);
       vista.imprimirCalifEst(estList.get(indiceEst).getCalificacion());
       estList.get(indiceEst).setCalificacion(vista.SolicitarCalificacionEst());            
        return true;
@@ -95,7 +76,6 @@ public class ControladorEstudiante{
 public boolean modificarEdadEst(Integer matricula){
     Integer indiceEst=buscarEst(matricula);
     if (indiceEst != -1) {
-     /// obj1=estList.get(indiceEst);
       vista.imprimirEdadEst(estList.get(indiceEst).getEdad());
       estList.get(indiceEst).setEdad(vista.SolicitarEdadEst());            
        return true;
